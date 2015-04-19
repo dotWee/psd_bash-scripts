@@ -92,13 +92,13 @@ DEVICE="$1"
          4) -j32"
       read n
          case $n in
-            1) make -j4 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
+            1) make -j4 bacon 2>&1 | tee build-logs/slim_$DEVICE-userdebug.txt
                ;;
-            2) make -j8 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
+            2) make -j8 bacon 2>&1 | tee build-logs/slim_$DEVICE-userdebug.txt
                ;;
-            3) make -j18 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
+            3) make -j18 bacon 2>&1 | tee build-logs/slim_$DEVICE-userdebug.txt
                ;;
-            4) make -j32 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
+            4) make -j32 bacon 2>&1 | tee build-logs/slim_$DEVICE-userdebug.txt
                ;;
             *) invalid option
                ;;
