@@ -13,7 +13,7 @@ Use these commands in your terminal:
     cd
     mkdir -p slim
     sudo apt-get install git -y
-    git clone git://github.com/dotWee/psd_bash-scripts slim
+    git clone git://github.com/dotWee/slim_bash-scripts slim
     cd slim
     chmod +x step-1.sh && chmod +x step-2.sh && chmod +x build.sh
     ./step-1.sh
