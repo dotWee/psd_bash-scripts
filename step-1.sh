@@ -2,6 +2,7 @@
 
 #
 # Created by Michael S Corigliano for Team AOSPAL (michael.s.corigliano@gmail.com)
+# Modified by Lukas Wolfsteiner (lukas@dotwee.de) for personal use
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,8 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# This will create a build environment for building Paranoid SaberDroid Android
-# on Ubuntu 14.04 LTS 64 bit (x86_64) by installing the necessary packages and 
+# This will create a build environment for building SlimLP on Ubuntu 14.04
+# 64 bit (x86_64) by installing the necessary packages and
 # updating your operating system.
 #
 

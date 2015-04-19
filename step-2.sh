@@ -2,6 +2,7 @@
 
 #
 # Created by Michael S Corigliano for Team AOSPAL (michael.s.corigliano@gmail.com)
+# Modified by Lukas Wolfsteiner (lukas@dotwee.de) for personal use
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,22 +36,22 @@
    echo -e "Please enter your 'sudo' password if prompted.";
    echo -e "";
    echo -e ""
-   curl https://storage.googleapis.com/git-repo-download/repo > ~/bin/repo
+   curl https://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
    chmod a+x ~/bin/repo
    clear
    
 # 3) Create working directory
    echo -e "Part 3 of 4";
-   echo -e "Creating working directory '~/psd'...";
+   echo -e "Creating working directory '~/slim'...";
    echo -e "Please enter your 'sudo' password if prompted.";
    echo -e "";
    echo -e ""
-   mkdir -p ~/psd
+   mkdir -p ~/slim
    clear
 
 # 4) Initialize and sync repo
    echo -e "Part 4 of 4";
-   echo -e "Initializing and syncing repo to '~/psd'...";
+   echo -e "Initializing and syncing repo to '~/slim'...";
    echo -e "This will take a long time (depending on your internet connection";
    echo -e "Please enter your 'sudo' password if prompted.";
    echo -e "Make sure to enter in your name and email";
@@ -58,19 +59,19 @@
    echo -e ""
    cd ~/psd
    echo "Select a branch to use:
-         1) kitkat
-         2) kitkat-staging
-         3) kitkat-legacy
-         4) kitkat-legacy-staging"
+         1) SlimLP 5.0
+         2) SlimLP 5.0 caf
+         3) SlimLP 5.1
+         4) SlimLP 5.1 staging"
       read n
          case $n in
-            1) repo init -u git://github.com/AOSPAL/manifest.git -b kitkat
+            1) repo init -u git://github.com/SlimRoms/platform_manifest.git -b lp5.0
                ;;
-            2) repo init -u git://github.com/AOSPAL/manifest.git -b kitkat-staging
+            2) repo init -u git://github.com/SlimRoms/platform_manifest.git -b lp5.0-caf
                ;;
-            3) repo init -u git://github.com/AOSPAL/manifest.git -b kitkat-legacy
+            3) repo init -u git://github.com/SlimRoms/platform_manifest.git -b lp5.1
                ;;
-            4) repo init -u git://github.com/AOSPAL/manifest.git -b kitkat-legacy-staging
+            4) repo init -u git://github.com/SlimRoms/platform_manifest.git -b lp5.1staging
                ;;
             *) invalid option
                ;;

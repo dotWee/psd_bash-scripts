@@ -2,6 +2,7 @@
 
 #
 # Created by Michael S Corigliano for Team AOSPAL (michael.s.corigliano@gmail.com)
+# Modified by Lukas Wolfsteiner (lukas@dotwee.de) for personal use
 #
 # Parts of the original AOSPA build script have also been implemented in this script,
 # it can be found here: https://www.github.com/AOSPA/android_vendor_pa/build.sh
@@ -26,7 +27,7 @@
 DEVICE="$1"
  
 # start
-   echo -e "Building Paranoid SaberDroid for $DEVICE";
+   echo -e "Building SlimLP for $DEVICE";
  
 # make 'build-logs' directory if it doesn't already exist
    echo -e "Making a 'build-logs' directory if you haven't already..."
@@ -77,20 +78,10 @@ DEVICE="$1"
    . build/envsetup.sh
    clear
 
-# decide to build odex or deodex
-   echo "Would you like to build odex or deodex?
-         1) odex
-         2) deodex"
-      read n
-         case $n in
-            1) lunch psd_$DEVICE-user
-               ;;
-            2) lunch psd_$DEVICE-userdebug
-               ;;
-            *) invalid option
-               ;;
-         esac
-         clear
+# tell the environment what device it shall build
+   echo -e "Initializing device-build..."
+   lunch slim_$DEVICE-userdebug
+   clear
  
 # execute the build while sending a log to 'build-logs'
    echo -e "Starting build...";
@@ -101,21 +92,22 @@ DEVICE="$1"
          4) -j32"
       read n
          case $n in
-            1) make -j4 bacon 2>&1 | tee build-logs/psd_$DEVICE.txt
+            1) make -j4 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
                ;;
-            2) make -j8 bacon 2>&1 | tee build-logs/psd_$DEVICE.txt
+            2) make -j8 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
                ;;
-            3) make -j18 bacon 2>&1 | tee build-logs/psd_$DEVICE.txt
+            3) make -j18 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
                ;;
-            4) make -j32 bacon 2>&1 | tee build-logs/psd_$DEVICE.txt
+            4) make -j32 bacon 2>&1 | tee build-logs/slim_$DEVICE.txt
                ;;
             *) invalid option
                ;;
          esac
  
 # we're done
-   echo -e "Finished building Paranoid SaberDroid."
+   echo -e "Finished building SlimLP."
    echo -e "If for some reason your build failed,"
-   echo -e "please check the 'build-logs' directory to figure out why."
+   echo -e "please check the 'build-logs' directory"
+   echo -e "to figure out why."
    echo -e ""
    echo -e ""
