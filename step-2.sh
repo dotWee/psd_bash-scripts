@@ -57,7 +57,7 @@
    echo -e "Make sure to enter in your name and email";
    echo -e "";
    echo -e ""
-   cd ~/psd
+   cd ~/slim
    echo "Select a branch to use:
          1) SlimLP 5.0
          2) SlimLP 5.0 caf
