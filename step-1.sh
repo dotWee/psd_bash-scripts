@@ -39,26 +39,20 @@
    echo -e "";
    echo -e ""
    sudo apt-get update
-   sudo apt-get install git gnupg flex bison gperf build-essential \
-   zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
-   libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
-   libgl1-mesa-dev g++-multilib mingw32 tofrodos \
-   python-markdown libxml2-utils xsltproc zlib1g-dev:i386 \
-   android-tools-adb android-tools-fastboot libcloog-isl-dev \
-   texinfo gcc-multilib libcap-dev libz4* \
-   sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+   sudo apt-get install bison g++-multilib git gperf libxml2-utils make zlib1g-dev:i386 zip
    clear
    
-# 3) Install and configure JDK 6u45+
+# 3) Install and configure openJDK 7
    echo -e "Part 3 of 3";
-   echo -e "Installing and configuring JDK 6...";
+   echo -e "Installing and configuring JDK 7...";
    echo -e "Please enter your 'sudo' password when promped.";
    echo -e "Please press 'enter' when prompted.";
    echo -e "";
    echo -e ""
-   sudo apt-add-repository ppa:webupd8team/java
    sudo apt-get update
-   sudo apt-get install oracle-java6-installer -y
+   sudo apt-get install openjdk-7-jdk -y
+   sudo update-alternatives --config java
+   sudo update-alternatives --config javac
    clear
    
 # Let the user know that the script has finished
